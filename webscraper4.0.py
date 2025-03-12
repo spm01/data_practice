@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 def select_option(menu, option_index):
-    """Selects an option from a dropdown menu."""
+    #chooses option from dropdown menu
     menu.click()
     time.sleep(1)
     options = driver.find_elements(By.CLASS_NAME, 'option-item')
@@ -11,14 +11,14 @@ def select_option(menu, option_index):
     time.sleep(1)
 
 def download_csv():
-    """Finds and clicks the CSV download link."""
+    #selects download link
     download_section = driver.find_element(By.CSS_SELECTOR, 'div[style="padding-top: 7px;"]')
     download_link = download_section.find_element(By.TAG_NAME, 'a')
     download_link.click()
     time.sleep(3)
 
 def select():
-    """Cycles through all market selections and downloads CSV files."""
+    #cycles through all options and downloads from each link
     
     #find all available dropdowns
     menus = driver.find_elements(By.CLASS_NAME, 'mt-3')
